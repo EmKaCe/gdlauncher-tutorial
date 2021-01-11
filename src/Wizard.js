@@ -84,12 +84,10 @@ const Wizard = () => {
             >
                 {currentStep == 0 ? (
                     <div>
-                        <Typography
-                            className={classes.stepInstruction}
-                            variant="h4"
-                        >
-                            Installiere und Starte den GDLauncher.
-                        </Typography>
+                        <div className={classes.stepInstruction}>
+                            <Typography variant="h4">Installiere und Starte den GDLauncher.</Typography>
+                            <Typography variant="h6">Ausnahme: Du hast einen Minecraft-Account mit Microsoft-Login</Typography>
+                        </div>
                         <Grid
                             className={classes.stepInstruction}
                             container
@@ -129,6 +127,7 @@ const Wizard = () => {
                             </Link>
                         </Grid>
                         <Typography
+                            className={classes.stepInstruction}
                             align="center"
                             variant="body1"
                         >
@@ -142,6 +141,28 @@ const Wizard = () => {
                             >
                                 Probiere es mit der portablen Version!
                             </Link>
+                        </Typography>
+                        <Typography
+                            align="center"
+                            variant="h6"
+                        >
+                            Du hast einen Minecraft-Account mit Microsoft-Konto?
+                        </Typography>
+                        <Typography
+                            align="center"
+                            variant="body1"
+                        >
+                            Solltest du einen neuen Minecraft-Account haben,<br />
+                            der nur mit einem Microsoft-Konto funktioniert,<br />
+                            dann lade&nbsp;
+                            <Link
+                                href="https://emkace.de/files/Belastend-1.16.4_manual.zip"
+                                color="inherit"
+                                style={{ textDecoration: "underline" }}
+                            >
+                                diese Datei herunter
+                            </Link>
+                            &nbsp;und folge der beigelegten Anleitung.
                         </Typography>
                     </div>
                 ) : null}
@@ -366,7 +387,8 @@ const Wizard = () => {
                             align="center"
                             variant="body1">
                             <p>Nehme deine Einstellungen vor, wie es dir beliebt und<br />
-                            installiere auch gerne ein Resource Pack oder Optifine, falls du das möchtest.</p>
+                            installiere auch gerne ein Resource Pack,<br />
+                            falls du das möchtest (Optifine ist bereits mitinstalliert).</p>
                             <p>Die Server-Adresse lautet:<br />
                                 <code>mc.emkace.de</code>
                             </p>
